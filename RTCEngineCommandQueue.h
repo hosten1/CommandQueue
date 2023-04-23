@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 @interface RTCEngineCommandQueue :NSObject
-@property(nonatomic,assign,nullable)id<RTCEngineCommandQueueDelegate> delegate;
+@property(nonatomic,weak,nullable)id<RTCEngineCommandQueueDelegate> delegate;
 @property(nonatomic,copy)NSString *logPath;
 - (void)pushWithMethod:(NSString*)method argData:(nonnull NSDictionary*)argData dataCB:(void (^)( NSDictionary *respData))dataCB;
 - (void)close;
